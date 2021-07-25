@@ -1,0 +1,23 @@
+{
+  "name": "choose-color-jquery",
+  "version": "1.0.0",
+  "description": "A component color list with Jquery",
+  "main": "choose-color.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victormaestri/choose-color-jquery.git"
+  },
+  "keywords": [
+    "component",
+    "jquery",
+    "javascript",
+    "color"
+  ],
+  "author": "Victor Maestri <victormaestri.f@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victormaestri/choose-color-jquery/issues"
+  },
+  "homepage": "https://github.com/victormaestri/choose-color-jquery#readme"
+}

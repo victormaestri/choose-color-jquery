@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="choose-color.css">
+  <title>Example using Choose Color Component</title>
+
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: antiquewhite;
+      padding: 20px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      position: 'absolute';
+      bottom: 0;
+      left: 10px;
+    }
+
+    .colorDisplay {
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Choose your color</h1>
+
+  <div class='container'>
+    <button id="chooseColor">Click here to show the colors</button>
+    <div class="colorDisplay"></div>
+    <input class="colorValue" type="hidden" name="">
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="choose-color.js"></script>
+  <script>
+    $(document).ready(() => {
+      $.support.cors = true;
+      const $button = $('#chooseColor')
+      const $colorValue = $('.colorValue')
+      const $colorDisplay = $('.colorDisplay')
+
+      $($button).sbxColorChoice({
+        selecionarCor: (color) => {
+          $($colorValue).val(color)
+          $colorDisplay.css('background-color', color)
+          console.log($($colorValue).val());
+        },
+        reseteCor: '#FFFFFF',
+        // textResetColorButton: 'Custom text',
+        // removePallet: '.co-hue-1, .co-hue-2, .co-hue-3, .co-hue-4'
+      })
+    })
+  </script>
+</body>
+
+</html>
